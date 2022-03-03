@@ -1,1 +1,55 @@
 // Specific CSS for your home-page
+.container {
+  background-position: center;
+  background-color: #1CDD87;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 60px 60px;
+  width: 1500px;
+  height: 350px;
+}
+
+// .row {
+//   width: 600px;
+//   height: 300px;
+//   padding: 30px 30px;
+//   // text-align: center;
+// }
+
+h1 {
+  font-size: 70px;
+  color: azure;
+  text-align: center;
+  // padding: 25px;
+}
+
+p {
+  text-align: center;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.cards {
+  display: flex;
+  margin: 80px;
+}
+
+.home-p {
+  padding: 0px 20px;
+  font-size: 20px;
+  text-align: justify;
+}
+
+h2 {
+  display: flex;
+}
+
+#logo-recy {
+  width: 60px;
+  height: 60px;
+  margin-left: 20px;
+}
+
+.nav-link {
+  margin-right: 20px;
+  width: 160px;
+}
