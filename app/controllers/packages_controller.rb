@@ -16,7 +16,7 @@ class PackagesController < ApplicationController
   end
 
   def create
-    @package = Package.new(package_params)
+    @package = Package.new(packages_params)
     @package.user = current_user
     authorize @package
     if @package.save
