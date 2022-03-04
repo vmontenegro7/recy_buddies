@@ -1,38 +1,39 @@
 <p id="notice"><%= notice %></p>
 
-<h1 style="color: black">Recycling Packages</h1>
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/vmontenegro7/image/upload/v1646415427/Recy-Buddies/Think-Cans_i67goa.png)">
+  <div><h1 style="color: #25EA7F" id="Packages-title">Recycling Packages</h1></div>
 
-<% if user_signed_in? %>
-  <h2>Welcome <%= current_user.email %></h2>
-<% end %>
+  <% if user_signed_in? %>
+    <div><h2>Welcome <%= current_user.email %></h2></div>
+  <% end %>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Address</th>
-      <th>Content</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @packages.each do |package| %>
+<div class="row">
+  <table>
+    <thead>
       <tr>
-        <td><%= package.address %></td>
-        <td><%= package.content %></td>
-        <td><%= package.user.email %></td>
-        <td><%= link_to 'Show', package %></td>
-        <% if policy(package).destroy? %>
-          <!--<td><%= link_to 'Edit', edit_package_path(package) %></td>-->
-          <td><%= link_to 'Destroy', package, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
+        <div class="column"><th>Address</th></div>
+        <div class="column"><th>Content</th></div>
+        <div class="column"><th>User</th></div>
+        <div class="column"><th>Show</th></div>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+
+    <tbody>
+      <% @packages.each do |package| %>
+        <tr>
+          <td><%= package.address %></td>
+          <td><%= package.content %></td>
+          <td><%= package.user.email %></td>
+          <td><%= link_to 'Details', package %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<%# <br> %>
 
 <% if policy(Package).create? %>
   <%= link_to 'New Package', new_package_path %>

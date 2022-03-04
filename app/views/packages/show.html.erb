@@ -14,5 +14,10 @@
   <strong>User email:</strong>
   <%= current_user.email %>
 </p>
+<p>
+  <% if policy(@package).destroy? %>
+    <%= link_to 'Destroy', package_path(@package), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
 
+</p>
 <%= link_to 'Back', packages_path %>
