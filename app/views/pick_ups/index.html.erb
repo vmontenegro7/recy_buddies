@@ -1,0 +1,18 @@
+<h1>Welcome</h1>
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>User email:</strong>
+  <%= current_user.email %>
+</p>
+
+<% @my_pick_ups.each do |my_pick_up| %>
+  <p>
+    <strong>Address:</strong>
+    <%= my_pick_up.address %>
+    </p>
+
+    <p>
+      <strong>Content:</strong>
+      <%= my_pick_up.content %>
+    </p>
+<% end %>

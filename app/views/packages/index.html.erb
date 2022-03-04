@@ -25,7 +25,11 @@
         <td><%= link_to 'Show', package %></td>
         <% if policy(package).destroy? %>
           <!--<td><%= link_to 'Edit', edit_package_path(package) %></td>-->
-          <td><%= link_to 'Destroy', package, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Delete', package, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+        <% if package.user_id != current_user.id %>
+          <% @pick_up_package = {user_id: current_user.id, package_id: package.user_id} %>
+          <td><%= link_to 'PickUp', "#" %></td> <!--new_pick_up_path(@pick_up_package)--->
         <% end %>
       </tr>
     <% end %>
