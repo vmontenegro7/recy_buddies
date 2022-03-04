@@ -12,11 +12,14 @@
   <table>
     <thead>
       <tr>
-        <div class="column"><th>Address</th></div>
-        <div class="column"><th>Content</th></div>
-        <div class="column"><th>User</th></div>
-        <div class="column"><th>Show</th></div>
-        <th colspan="3"></th>
+        <td><%= package.address %></td>
+        <td><%= package.content %></td>
+        <td><%= package.user.email %></td>
+        <td><%= link_to 'Show', package %></td>
+        <% if package.user_id != current_user.id %>
+          <% @pick_up_package = {user_id: current_user.id, package_id: package.user_id} %>
+          <td><%= link_to 'PickUp', "#" %></td> <!--new_pick_up_path(@pick_up_package)--->
+        <% end %>
       </tr>
     </thead>
 

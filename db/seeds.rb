@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+# i = 0
+# 4.times{
+#   i += 1
+#   PickUp.create({package_id => i})
+# }
