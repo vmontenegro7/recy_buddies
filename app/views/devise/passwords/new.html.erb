@@ -3,12 +3,16 @@
 <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
+<div class="cards">
+  <div class = "col-12 col-md-10 col-lg-8">
+    <div class="form-inputs" id="forgot-password">
+      <%= f.input :email,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "email" } %>
+    </div>
   </div>
+</div>
 
   <div class="form-actions">
     <%= f.button :submit, "Send me reset password instructions" %>
