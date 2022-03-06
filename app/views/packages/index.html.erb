@@ -16,6 +16,7 @@
         <div class="column"><th>Content</th></div>
         <div class="column"><th>User</th></div>
         <div class="column"><th>Show</th></div>
+        <div class="column"><th>Picked Up</th></div>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -28,6 +29,14 @@
           <td><%= package.content %></td>
           <td><%= package.user.email %></td>
           <td><%= link_to 'Details', package %></td>
+          <td><%= package.picked_up %></td>
+          <% unless current_user.id == package.user_id%>
+            <% unless package.picked_up == true %>
+              <!--<td><%= link_to 'Pick Up', new_pick_up_path({package_id: package.id, user_id: current_user.id}) %></td>--> <!--new_user_pick_up_path -->
+              <td><%= button_to 'Pick Up', pick_ups_path({package_id: package.id, user_id: current_user.id}), method: :post %></td>
+              <!--user_pick_ups_path-->
+            <% end %>
+          <% end %>
         </tr>
       <% end %>
     </tbody>

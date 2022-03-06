@@ -1,18 +1,22 @@
-<h1>Welcome</h1>
+<h1 style="color: black">Welcome</h1>
 <p id="notice"><%= notice %></p>
 <p>
   <strong>User email:</strong>
   <%= current_user.email %>
+  <strong>This is the page: pick_ups/index.html.erb</strong>
 </p>
 
-<% @my_pick_ups.each do |my_pick_up| %>
-  <p>
-    <strong>Address:</strong>
-    <%= my_pick_up.address %>
-    </p>
-
-    <p>
-      <strong>Content:</strong>
-      <%= my_pick_up.content %>
-    </p>
+<% @packages = Package.all %>
+<% @pick_ups = PickUp.all%>
+<% @packages.each do |package| %>
+  <% @pick_ups.each do |pick_up|%>
+    <% if pick_up.user_id == current_user.id && pick_up.package_id == package.id %>
+      <strong>Package's Address</strong>
+        <p><%= package.address %></p>
+      <strong>Package's Address</strong>
+        <p><%= package.content %></p>
+      <strong>Package's Picked Up</strong>
+        <p><%= package.picked_up %></p>
+      <% end %>
+  <% end %>
 <% end %>
