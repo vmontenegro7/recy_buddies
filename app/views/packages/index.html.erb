@@ -25,6 +25,9 @@
     <tbody>
       <% @packages.each do |package| %>
         <tr>
+        <% if package.picked_up == true %>
+          <% next %>
+        <% else %>
           <td><%= package.address %></td>
           <td><%= package.content %></td>
           <td><%= package.user.email %></td>
@@ -37,6 +40,7 @@
               <!--user_pick_ups_path-->
             <% end %>
           <% end %>
+        <% end %>
         </tr>
       <% end %>
     </tbody>

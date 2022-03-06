@@ -6,6 +6,10 @@ class PackagePolicy < ApplicationPolicy
     end
   end
 
+  def list_my_picked_up_packages?
+    true
+  end
+
   def show?
     true
   end
