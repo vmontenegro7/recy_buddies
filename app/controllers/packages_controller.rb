@@ -32,6 +32,13 @@ class PackagesController < ApplicationController
     redirect_to packages_url, notice: 'Recycle package was successfully deleted.'
   end
 
+  def list_my_picked_up_packages
+    # @packages = policy_scope(Package)
+    @packages = authorize Package.all
+    @my_packages = @packages.select{ |package| package.picked_up == true && package.user_id == current_user.id }
+    # raise
+    @my_packages
+  end
   private
 
   def set_package
