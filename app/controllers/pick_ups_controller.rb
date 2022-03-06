@@ -33,16 +33,28 @@ class PickUpsController < ApplicationController
 
   def index
     @pick_ups = policy_scope(PickUp)
-    @packages = Package.all
-    @not_my_packages = @packages.reject do |package|
-      package.user_id == @user
-    end
-    @my_pick_ups = @not_my_packages.select do |package|
-      @pick_ups.each do |pick_up|
-        pick_up.user_id == @user ? package : false
-      end
-    end
-    @my_pick_ups
+    @packages = policy_scope(Package)
+    # @packages = Package.all
+    # @not_my_packages = @packages.reject do |package|
+    #   package.user_id == current_user.id
+    # end
+    # @my_pick_ups = @not_my_packages.select do # |package|
+    #   @pick_ups.each do |pick_up|
+    #     pick_up.user_id == current_user.id # ? package : false
+    #   end
+    # end
+    # @my_pick_ups
+    # @packages = @packages.select do |package|
+    #   package.picked_up == true
+    # end
+    # @my_pick_ups = @pick_ups.each do |pick_up| # user_id, package_id
+    #   @packages.select do |package|
+    #     pick_up.user_id == current_user.id && package.user_id != current_user.id
+    #   end
+    # end
+    # @my_pick_ups = @not_my_packages
+    # @my_pick_ups
+    # return @pick_ups.all
   end
 
   def show
@@ -60,14 +72,25 @@ class PickUpsController < ApplicationController
     @pick_ups
   end
 
-  def new
-    @pick_up = PickUp.new
-  end
+  # def new
+  #   @pick_up_package = Package.find(params[:package_id])
+  #   @pick_up_package.update_attribute(:picked_up, true)
+  #   @pick_up = PickUp.new # PickUp.new({ user_id: current_user.id, package_id: @pick_up_package.id })
+  #   authorize @pick_up
+  # end
 
   def create
-    @pick_up = PickUp.new(pick_up_params)
+    # added this line
+    @pick_up_package = Package.find(params[:package_id])
+    # also added this line
+    @pick_up_package.update_attribute(:picked_up, true)
+    @pick_up = PickUp.new({ user_id: params[:user_id].to_i, package_id: params[:package_id].to_i }) # ({ user_id: current_user.id, package_id: @pick_up_package.id })
+    # @pick_up.user = current_user
+    authorize @pick_up
     if @pick_up.save
-      redirect_to pick_up_path(@pick_up)
+      # redirect_to pick_up_path(@pick_up)
+      # redirect_to user_pick_ups_path
+      redirect_to user_pick_ups_path(current_user.id) # new_user_pick_up_path({ package_id: @pick_up.package_id, user_id: @pick_up.user_id })
     else
       render :new
     end
@@ -80,6 +103,6 @@ class PickUpsController < ApplicationController
   end
 
   def pick_up_params
-    params.require(:pick_up).permit(:user_id, :package_id)
+    params.require(:package_id, :user_id)
   end
 end
