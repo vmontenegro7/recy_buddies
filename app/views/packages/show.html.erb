@@ -1,28 +1,28 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @package.address %>
-</p>
-<p>
-  <strong>Content:</strong>
-  <%= @package.content %>
-</p>
-<p>
-  <strong>User:</strong>
-  <%= @package.user_id %>
-  <strong>User email:</strong>
-  <%= current_user.email %>
-</p>
-<p>
-  <% if policy(@package).destroy? %>
-    <%= link_to 'Destroy', package_path(@package), method: :delete, data: { confirm: 'Are you sure?' } %>
-  <% end %>
-
-</p>
-<%= link_to 'Back', packages_path %>
-
-
-<div class="box">
- <main class = "main_div_in_a_box">best div</main>
+<div class="container show packages">
+  <div class="row justify-content-center">
+    <div class="class-4">
+      <p id="notice"><%= notice %></p>
+      <p>
+        <strong>Address:</strong>
+        <%= @package.address %>
+      </p>
+      <p>
+        <strong>Content:</strong>
+        <%= @package.content %>
+      </p>
+      <p>
+        <strong>Who created this package?</strong>
+        <%@user_email = User.find(@package.user_id).email%>
+        <%= @user_email.split("@")[0] %>
+      </p>
+      <p>
+       <%= link_to "Back", packages_path, class: "btn btn-ghost" %>
+       </p>
+      <p>
+        <% if policy(@package).destroy? %>
+          <%= link_to 'Destroy', package_path(@package), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+      </p>
+  </div>
+  </div>
 </div>
