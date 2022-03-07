@@ -1,0 +1,38 @@
+@import "home";
+
+#package_button {
+  padding: 8px 115px;
+  border-radius: 24px;
+  background: #1EDD88;
+  transition: background 0.3s ease;
+  position: center;
+  width: 382px;
+  margin-bottom: 16px;
+  color: whitesmoke;
+  margin-left: 183px;
+}
+
+#package_button:hover {
+  background: #1BCB7F;
+  color: white;
+}
+
+.recycling_container {
+  background-color: white;
+  margin-top: 12px;
+  align-items: center;
+  padding: 20px;
+  border-radius: 50px;
+  width: 1200px;
+  height: 434px
+}
+
+#back_button {
+  align-items: center;
+  margin-left: 335px;
+}
+
+.adjust {
+  margin-left: 100px;
+  margin-top: 50px;
+}
