@@ -1,0 +1,55 @@
+// .pickup-content {
+//   align-content: center;
+//   background-image: linear-gradient(to bottom right, rgb(241, 227, 227) , rgb(131, 250, 131));
+//   box-shadow: 0 0 3px 0px rgb(1, 167, 1) inset !important;
+//   width: 1200px;
+//   height: 200px;
+//   margin-top: 50px;
+//   margin-bottom: 20px;
+//   align-items: center;
+// }
+
+.information {
+  height: 200px;
+}
+
+.header {
+  height: 175px;
+}
+
+.card {
+  border-radius: 20px;
+}
+
+.card-body {
+  float: none;
+}
+
+.container-pickups {
+  background: #143C6D;
+  display: flex;
+  margin-top: 20px;
+}
+
+// .btn-danger {
+// align-content: center;
+
+// }
+
+div.card-body {
+  align-items: center;
+}
+
+.btn.btn-danger {
+  color: white;
+  font-family: $body-font;
+}
+
+h5 {
+  color: #009453;
+  font-family: $body-font;
+}
+
+.btn-bold {
+  font-weight: bolder !important;
+}
