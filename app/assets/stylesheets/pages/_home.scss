@@ -28,6 +28,7 @@ p {
 .cards {
   display: flex;
   margin: 60px;
+  
 }
 
 .home-p {
@@ -38,8 +39,17 @@ p {
 
 h2 {
   text-align: center;
-  padding: 10px 16px;
-  size: 26px;
+  padding: 20px 8px;
+  size: 30px;
+  color:rgb(4, 4, 104)  ;
+  background-color: #F4F4F4;
+  background: #f4f7fa;
+  box-shadow:0 0 4px 0px rgb(155, 251, 155) inset ;
+  //-webkit-text-stroke:0.04px #026829;
+  //text-decoration: #dcfde9;
+  //text-shadow: 2px 0 0 white , 2px 0 0 white, 2px 0 0 white , 2px 0 0 white;
+  //text-decoration:wavy;
+  //text-shadow: 1px 1px 3px rgba(135, 251, 58, 0.2);
 }
 
 #logo-recy {
@@ -56,16 +66,30 @@ h2 {
 // Carousel
 
 .carousel.slide {
-  width: 1365px;
-  height: 350px;
+  width: 2000px;
+  height: 400px;
   margin: 40px 40px;
   padding: 25px 60px;
-  box-shadow: #1CDD87;
+  box-shadow: #1CDD87
+  
+}
+
+#carouselExampleCaptions {
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-inner {
+  border-radius: 9px 9px 9px 9px;
+}
+
+.carousel-item {
+  border-radius: 9px 9px 9px 9px;
 }
 
 .carousel-item{
-  width: 1250px;
-  height: 350px;
+  width: 2000px;
+  height: 400px;
 }
 
 h3 {
@@ -81,16 +105,18 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
+  height: 20px;
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
+  margin-top: 45px;
+  box-shadow: #7a7a7a;
 }
 .footer-links {
   display: flex;
   align-items: center;
 }
 .footer-links a {
-  color: black;
+  color: rgb(38, 155, 3);
   opacity: 0.15;
   text-decoration: none;
   font-size: 24px;
@@ -112,9 +138,11 @@ h3 {
   justify-content: center;
   align-items: center;
   color: white;
+  text-decoration: #dcfde9;
+  text-decoration: underline;
   font-size: 24px;
   font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 3px rgba(135, 251, 58, 0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
@@ -124,6 +152,11 @@ h3 {
   display: flex;
 }
 
+// nav bar
+
+.navbar.navbar-expand-sm.navbar-light.navbar-lewagon {
+  box-shadow: 0 0 3px 0px rgb(1, 167, 1) inset !important;
+}
 // navbar buttons
 
 a.nav-link.btn.btn-flat {
@@ -168,4 +201,13 @@ div.dropdown-menu.dropdown-menu-end.show {
 
 .row {
   margin: 20px 20px;
+}
+
+// Line work
+#Container-Outline {
+  margin-top:-15px ;
+  //outline: 1px solid rgb(1, 167, 1);
+  box-shadow: 0 0 4px 0px rgb(155, 251, 155) inset !important;
+  background-image: linear-gradient(to bottom left, rgb(241, 227, 227) , rgb(131, 250, 131));
+  height:750px
 }
