@@ -29,7 +29,7 @@ class PickUpsController < ApplicationController
   # end
   # def new; end
   # def create; end
-  before_action :set_pick_up, only: [:show]
+  before_action :set_pick_up, only: %i[show destroy]
 
   def index
     @pick_ups = policy_scope(PickUp)
@@ -63,13 +63,15 @@ class PickUpsController < ApplicationController
     # we would pass the user_id and also all the packages for a given user id
     # if @package.user_id == current_user.id
     # @record.user == @user
-    @packages = Package.all
-    @pick_ups = @packages.select do
-      @record.user == @user
-    end
+    authorize @pick_up
+    # @packages = Package.all
+    # @pick_ups = @packages.select do |package|
+      # @record.user == @user
+      # package.user_id == current_user.id
+    # end
     # if @record.user == @user
     # end
-    @pick_ups
+    # @pick_ups
   end
 
   # def new
@@ -94,6 +96,15 @@ class PickUpsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    authorize @pick_up
+    @pick_up.destroy
+    @package = Package.find(@pick_up.package_id)
+    @package.update_attribute(:picked_up, false)
+    # redirect_to pick_ups_url, notice: 'Pick up was successfully cancelled.'
+    redirect_to pick_ups_url, notice: 'Pick up was successfully cancelled.'
   end
 
   private

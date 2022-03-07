@@ -30,5 +30,6 @@ class PickUpPolicy < ApplicationPolicy
 
   def allowed_to_destroy?
     @record.user == @user
+    # pick_up.user_id == current_user.id
   end
 end

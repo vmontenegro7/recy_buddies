@@ -16,4 +16,8 @@ Rails.application.routes.draw do
     resources :pick_ups
   end
 
+  resources :packages do
+    resources :pick_ups
+  end
+
 end
