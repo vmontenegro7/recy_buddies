@@ -10,9 +10,12 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Home", root_path, class: "nav-link btn btn-flat" %>
+            <%= link_to "Be a recycler", root_path, class: "nav-link btn btn-flat" %>
+          </li>
+        <% if user_signed_in? %>
+          <li class="nav-item active" id="package-button">
+            <%= link_to "Add Package", root_path, class: "nav-link btn btn-flat"  %>
           </li>
           <li class="nav-item">
           </li>
