@@ -17,6 +17,10 @@
         <p><%= package.content %></p>
       <strong>Package's Picked Up</strong>
         <p><%= package.picked_up %></p>
+        <!--when I click on the button, I'll call the destroy path(@package)--->
+      <p>
+          <%= link_to 'Cancell Pick Up', user_pick_up_path({user_id: pick_up.user_id, id: pick_up.id}), method: :delete, data: { confirm: 'Are you sure?' } %>
+      </p>
       <% end %>
   <% end %>
 <% end %>

@@ -12,19 +12,19 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Home", root_path, class: "nav-link btn btn-flat" %>
+            <%= link_to "Recycler mode", root_path, class: "nav-link btn btn-flat" %>
           </li>
-          <li class="nav-item">
+          <li class="nav-item active">
+          <% @pick_ups = PickUp.all %>
+              <% if @pick_ups.find{|pick_up| pick_up.user_id == current_user.id} %>
+                <%= link_to "My Pickups", pick_ups_path, class: "nav-link btn btn-flat" %>
+              <% end %>
           </li>
           <li class="nav-item dropdown">
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class:"avatar-large dropdown-toggle", alt:"avatar-large", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "All Packages", packages_path, class: "dropdown-item" %>
-              <% @pick_ups = PickUp.all %>
-              <% if @pick_ups.find{|pick_up| pick_up.user_id == current_user.id} %>
-                <%= link_to "My Pickups", pick_ups_path, class: "dropdown-item" %>
-              <% end %>
-              <% @packages = Package.all %>
+              <!--<% @packages = Package.all %>-->
               <%= link_to "Confirmed Pickups", list_my_picked_up_packages_packages_path, class: "dropdown-item" %>
               <!--<%= link_to "Another action", "#", class: "dropdown-item" %>-->
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
