@@ -1,26 +1,59 @@
-<h1 style="color: black">Welcome</h1>
-<p id="notice"><%= notice %></p>
-<p>
-  <strong>User email:</strong>
-  <%= current_user.email %>
-  <strong>This is the page: pick_ups/index.html.erb</strong>
-</p>
+<div class="header" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/vmontenegro7/image/upload/v1646415427/Recy-Buddies/Think-Cans_i67goa.png)">
 
-<% @packages = Package.all %>
-<% @pick_ups = PickUp.all%>
-<% @packages.each do |package| %>
-  <% @pick_ups.each do |pick_up|%>
-    <% if pick_up.user_id == current_user.id && pick_up.package_id == package.id %>
-      <strong>Package's Address</strong>
-        <p><%= package.address %></p>
-      <strong>Package's Content</strong>
-        <p><%= package.content %></p>
-      <strong>Package's Picked Up</strong>
-        <p><%= package.picked_up %></p>
-        <!--when I click on the button, I'll call the destroy path(@package)--->
+  <h1 style="color: black">Welcome </h1>
+  <p id="notice"><%= notice %></p>
+
+    <div class="username">
       <p>
-          <%= link_to 'Cancell Pick Up', user_pick_up_path({user_id: pick_up.user_id, id: pick_up.id}), method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= current_user.email %>
       </p>
-      <% end %>
+    </div>
+
+</div>
+
+
+<div class="pickup-content">
+  <% @packages = Package.all %>
+  <% @pick_ups = PickUp.all%>
+
+  <div class="container container-pickups justify-content-center">
+
+  <% @packages.each do |package| %>
+    <% @pick_ups.each do |pick_up|%>
+      <% if pick_up.user_id == current_user.id && pick_up.package_id == package.id %>
+      <div class="card m-2 " style="width: 18rem;">
+        <div class="card-body mx-auto">
+          <h5 class="card-title">Package's Address</h5>
+          <p class="card-text"><%= package.address %></p>
+          <h5 class="card-title">Package's Content</h5>
+          <p class="card-text"><%= package.content %></p>
+          <h5 class="card-title">Package's Picked Up</h5>
+          <p class="card-text"><%= package.picked_up %></p>
+          <p>
+          <%= link_to 'Cancel Pick Up', user_pick_up_path({user_id: pick_up.user_id, id: pick_up.id}), method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger btn-bold font-weight-bold"%>
+          </p>
+            </div>
+        </div>
+        <% end %>
+    <% end %>
   <% end %>
-<% end %>
+
+
+
+      </div>
+          <!--when I click on the button, I'll call the destroy path(@package)--->
+    </div>
+  </div>
+
+  <div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    This footer is made with <i class="fas fa-heart"></i> at Le Wagon
+
+</div>
