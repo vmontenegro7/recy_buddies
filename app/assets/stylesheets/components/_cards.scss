@@ -1,0 +1,11 @@
+// Packages page
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.card-category {
+  background-image: linear-gradient(#16B756, #25EA7F, #aaf0c9);;
+}
