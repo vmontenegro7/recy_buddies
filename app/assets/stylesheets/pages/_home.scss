@@ -1,5 +1,5 @@
 // Specific CSS for your home-page
-.container {
+.my-container-style {
   background-position: center;
   background-color: #1CDD87;
   margin-top: 50px;
@@ -28,7 +28,6 @@ p {
 .cards {
   display: flex;
   margin: 60px;
-  
 }
 
 .home-p {
@@ -39,17 +38,8 @@ p {
 
 h2 {
   text-align: center;
-  padding: 20px 8px;
-  size: 30px;
-  color:rgb(4, 4, 104)  ;
-  background-color: #F4F4F4;
-  background: #f4f7fa;
-  box-shadow:0 0 4px 0px rgb(155, 251, 155) inset ;
-  //-webkit-text-stroke:0.04px #026829;
-  //text-decoration: #dcfde9;
-  //text-shadow: 2px 0 0 white , 2px 0 0 white, 2px 0 0 white , 2px 0 0 white;
-  //text-decoration:wavy;
-  //text-shadow: 1px 1px 3px rgba(135, 251, 58, 0.2);
+  padding: 10px 16px;
+  size: 26px;
 }
 
 #logo-recy {
@@ -66,30 +56,16 @@ h2 {
 // Carousel
 
 .carousel.slide {
-  width: 2000px;
-  height: 400px;
+  width: 1365px;
+  height: 350px;
   margin: 40px 40px;
   padding: 25px 60px;
-  box-shadow: #1CDD87
-  
-}
-
-#carouselExampleCaptions {
-  display: flex;
-  justify-content: center;
-}
-
-.carousel-inner {
-  border-radius: 9px 9px 9px 9px;
-}
-
-.carousel-item {
-  border-radius: 9px 9px 9px 9px;
+  box-shadow: #1CDD87;
 }
 
 .carousel-item{
-  width: 2000px;
-  height: 400px;
+  width: 1250px;
+  height: 350px;
 }
 
 h3 {
@@ -105,18 +81,16 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 20px;
+  height: 100px;
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
-  margin-top: 45px;
-  box-shadow: #7a7a7a;
 }
 .footer-links {
   display: flex;
   align-items: center;
 }
 .footer-links a {
-  color: rgb(38, 155, 3);
+  color: black;
   opacity: 0.15;
   text-decoration: none;
   font-size: 24px;
@@ -126,7 +100,7 @@ h3 {
   opacity: 1;
 }
 .footer .fa-heart {
-  color: #4ed233;
+  color: #4ED233;
 }
 
 .card-category {
@@ -138,11 +112,9 @@ h3 {
   justify-content: center;
   align-items: center;
   color: white;
-  text-decoration: #dcfde9;
-  text-decoration: underline;
   font-size: 24px;
   font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(135, 251, 58, 0.2);
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
@@ -152,11 +124,6 @@ h3 {
   display: flex;
 }
 
-// nav bar
-
-.navbar.navbar-expand-sm.navbar-light.navbar-lewagon {
-  box-shadow: 0 0 3px 0px rgb(1, 167, 1) inset !important;
-}
 // navbar buttons
 
 a.nav-link.btn.btn-flat {
@@ -170,7 +137,7 @@ a.nav-link.btn.btn-flat {
 }
 
 a.nav-link.btn.btn-flat:hover {
-  color: #ffffff;
+  color: #FFFFFF;
   opacity: 2;
   background: #1CDD87;
   text-decoration: none;
@@ -189,7 +156,7 @@ a.nav-link.btn.btn-flat:hover {
 // Dropdown menu
 
 a.dropdown-item:hover {
-  color: #ffffff;
+  color: #FFFFFF;
   opacity: 2;
   background: #1CDD87;
   text-decoration: none;
@@ -201,42 +168,4 @@ div.dropdown-menu.dropdown-menu-end.show {
 
 .row {
   margin: 20px 20px;
-}
-
-// Line work
-#Container-Outline {
-  margin-top:-15px ;
-  //outline: 1px solid rgb(1, 167, 1);
-  box-shadow: 0 0 4px 0px rgb(155, 251, 155) inset !important;
-  background-image: linear-gradient(to bottom left, rgb(241, 227, 227) , rgb(131, 250, 131));
-  height:750px
-    
-.container.show.packages{
-  background-color: #91ffc2;
-  color: white;
-  font-weight: bold;
-  margin-top: 12px;
-  align-items: center;
-  padding: 20px;
-  margin-left: 115px;
-  border-radius: 50px;
-  width: 1200px;
-  height: 375px;
-  background-image: linear-gradient(to bottom left, rgb(241, 227, 227) , rgb(131, 250, 131));
-}
-.btn-ghost {
-  color: rgb(3, 116, 8);
-  border: 1px solid #91ffc2;
-  background-color: white;
-  padding: 8px 24px;
-  border-radius: 50px;
-  font-weight: medium;
-  opacity: 1;
-  transition: opacity 0.3s ease;
-}
-a.btn-ghost:hover{
-  color: blue;
-}
-.class-4 strong{
-  color: rgb(3, 116, 8);
 }
