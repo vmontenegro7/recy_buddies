@@ -1,5 +1,14 @@
-<h1 style="color: black">New Recycling Package</h1>
+<div class="adjust">
+  <div class="recycling_container row justify-content-center">
+      <div class = "col-12 col-md-10 col-lg-8">
 
-<%= render 'form', package: @package %>
+        <h1 style="color: black">New Recycling Package</h1>
 
-<%= link_to 'Back', packages_path %>
+        <%= render 'form', package: @package %>
+
+      <div class="button justify-content-center" id="back_button">
+        <%= link_to 'Back', packages_path, class:"btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+</div>
