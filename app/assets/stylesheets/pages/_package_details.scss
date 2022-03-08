@@ -1,0 +1,29 @@
+.container.show.packages{
+  background-color: #91ffc2;
+  color: white;
+  font-weight: bold;
+  margin-top: 12px;
+  align-items: center;
+  padding: 20px;
+  margin-left: 115px;
+  border-radius: 50px;
+  width: 1200px;
+  height: 375px;
+  background-image: linear-gradient(to bottom left, rgb(241, 227, 227) , rgb(131, 250, 131));
+}
+.btn-ghost {
+  color: rgb(3, 116, 8);
+  border: 1px solid #91ffc2;
+  background-color: white;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: medium;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+a.btn-ghost:hover{
+  color: blue;
+}
+.class-4 strong{
+  color: rgb(3, 116, 8);
+}
