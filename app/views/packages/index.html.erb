@@ -1,8 +1,6 @@
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <p id="notice"><%= notice %></p>
 
-<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/vmontenegro7/image/upload/v1646415427/Recy-Buddies/Think-Cans_i67goa.png)">
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/vmontenegro7/image/upload/v1646415296/Recy-Buddies/hands-holding-plastic-1024x683_u0ee5d.jpg)">
   <div><h1 style="color: #25EA7F" id="Packages-title">Recycling Packages</h1></div>
 
   <% if user_signed_in? %>
@@ -11,13 +9,13 @@
 </div>
 
 <div class="row">
-  <table>
+  <table class="table table-striped">
     <thead>
       <tr>
-        <div class="column"><th>Address</th></div>
-        <div class="column"><th>Content</th></div>
-        <div class="column"><th>User</th></div>
-        <div class="column"><th>Show</th></div>
+        <div class="column"><th scope="col">Address</th></div>
+        <div class="column"><th scope="col">Content</th></div>
+        <div class="column"><th scope="col">User</th></div>
+        <div class="column"><th scope="col">Show</th></div>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -32,11 +30,11 @@
           <td><%= package.address %></td>
           <td><%= package.content %></td>
           <td><%= package.user.email %></td>
-          <td><%= link_to 'Details', package %></td>
+          <td><%= link_to 'Details', package, class:"btn btn-lg btn-success" %></td>
           <% unless current_user.id == package.user_id%>
             <% unless package.picked_up == true %>
               <!--<td><%= link_to 'Pick Up', new_pick_up_path({package_id: package.id, user_id: current_user.id}) %></td>--> <!--new_user_pick_up_path -->
-              <td><%= button_to 'Pick Up', pick_ups_path({package_id: package.id, user_id: current_user.id}), method: :post %></td>
+              <td><%= button_to 'Pick Up', pick_ups_path({package_id: package.id, user_id: current_user.id}), method: :post, class:"btn btn-lg btn-success" %></td>
               <!--user_pick_ups_path-->
             <% end %>
           <% end %>
@@ -46,18 +44,4 @@
     </tbody>
   </table>
 </div>
-<%# <br> %>
-  <div class="cards">
-    <div class="card-category">
-    <strong>Address</strong>
-    <strong>Content</strong>
-    <strong>User</strong>
-    <strong>Show</strong>
-    <strong>Picked up</strong>
-
-    </div>
-  </div>
-
-<% if policy(Package).create? %>
-  <%= link_to 'New Package', new_package_path %>
-<% end %>
+</div>

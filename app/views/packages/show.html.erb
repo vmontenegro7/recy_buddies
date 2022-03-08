@@ -1,6 +1,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<div class="container show packages">
+<div class="container show packages mx-auto">
   <div class="row justify-content-center">
     <div class="class-4">
       <p id="notice"><%= notice %></p>
@@ -22,7 +22,7 @@
        </p>
       <p>
         <% if policy(@package).destroy? %>
-          <%= link_to 'Destroy', package_path(@package), method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to 'Delete', package_path(@package), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-ghost"%>
         <% end %>
       </p>
   </div>

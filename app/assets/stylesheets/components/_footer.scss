@@ -13,3 +13,8 @@ i.fab.fa-instagram:hover {
 i.fab.fa-linkedin:hover {
   color: #0072b1;
 }
+.page-container {
+display: grid;
+grid-template-rows: auto 1fr auto;
+min-height: 100vh;
+}
