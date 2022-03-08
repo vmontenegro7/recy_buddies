@@ -40,6 +40,18 @@ h2 {
   size: 26px;
 }
 
+.blue-color {
+  color: $blue;
+}
+
+.green-color {
+  color:#16B756
+}
+
+.gray-color{
+  color: grayscale($color: #535353)
+}
+
 #logo-recy {
   width: 200px;
   // height: 60px;
@@ -64,6 +76,10 @@ h2 {
 .carousel-item{
   width: 1250px;
   height: 350px;
+}
+
+.d-block {
+  filter: brightness(0.5);
 }
 
 h3 {
