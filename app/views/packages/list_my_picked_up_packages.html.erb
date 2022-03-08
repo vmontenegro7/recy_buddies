@@ -1,6 +1,38 @@
-<% @my_packages.each do |my_package|%>
-  <p><strong>Address</strong></p>
-    <%= my_package.address %>
-  <p><strong>Content</strong></p>
-    <%= my_package.content %>
-<% end %>
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/vmontenegro7/image/upload/v1646713208/Recy-Buddies/Recycling-Bottles-Hand_ktryov.jpg)">
+  <div><h1 style="color: #FFFFFF" id="Packages-title">Confirmed Pick-Ups</h1></div>
+</div>
+
+<div>
+<h2 style="color: #073567" id="extra-info" class="fw-bold">See your pick-ups listed below:</h2>
+</div>
+
+<div class="container margin-container">
+  <ol class="list-group list-group-numbered">
+    <%@my_packages.each do |my_package|%>
+    <%# <li class="list-group-item d-flex justify-content-between align-items-start"> %>
+      <li class="list-group-item d-flex">
+        <div class="ms-2 me-auto">
+          <div class="fw-bold">Address</div>
+            <%= my_package.address %>
+        </div>
+        <div class="ms-2 me-auto">
+          <div class="fw-bold">Content</div>
+            <%= my_package.content %>
+        </div>
+        <%# <span class="badge bg-primary rounded-pill">7</span> %>
+      </li>
+    <% end %>
+  </ol>
+</div>
+<%#
+<div class="container margin-top-container">
+  <ol class="list-group list-group-flush list-group-numbered">
+    <li class="list-group-item">
+    <strong>An item</strong>
+    </li>
+    <li class="list-group-item">A second item</li>
+    <li class="list-group-item">A third item</li>
+    <li class="list-group-item">A fourth item</li>
+    <li class="list-group-item">And a fifth one</li>
+  </ol>
+</div> %>
