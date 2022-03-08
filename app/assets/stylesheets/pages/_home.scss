@@ -75,11 +75,12 @@ h2 {
 // Carousel
 
 .carousel.slide {
-  width:1800px;
-  height: 600px;
-  margin: 40px 40px;
+  width:1350px;
+  height: 400px;
+  margin: 35px 0px;
   padding: 25px 60px;
-  box-shadow: #1CDD87
+  box-shadow: #1CDD87;
+  margin-left: 44px;
 
 }
 
@@ -97,8 +98,8 @@ h2 {
 }
 
 .carousel-item{
-  width:1800px;
-  height: 600px;
+  width:1350px;
+  height: 400px;
 }
 
 h3 {
@@ -117,7 +118,7 @@ h3 {
   height: 60px;
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
-  margin-top: 200px;
+  margin-top: 48px;
   box-shadow: 0 0.5px 0.5px 0 rgb(43, 206, 2) inset;
 }
 .footer-links {
